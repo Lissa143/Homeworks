@@ -1,31 +1,31 @@
 /* 1. Общий фон страницы и базовый шрифт */
 body {
   font-family: Arial, sans-serif;
-  background-color: #f4f7f6; 
+  background-color: #f4f7f6;
   color: #333333;
   padding: 20px;
   margin: 0;
 }
 
-/* 2. Карточки сводки (Классовый селектор) */
+/* 2. Карточки сводки (классовый селектор) */
 .summary-card {
   padding: 15px;
   margin-bottom: 12px;
-  background-color: #e8f0fe; 
-  border: 1px solid #1a73e8; 
-  color: #1a3c6e; 
+  background-color: #e8f0fe;
+  border: 1px solid #1a73e8;
+  color: #1a3c6e;
 }
 
-/* 3. Строки участников (Классовый селектор) */
+/* 3. Строки участников (классовый селектор) */
 .result-item {
   padding: 12px 15px;
   margin-bottom: 10px;
-  background-color: #ffffff; 
-  border: 1px solid #cccccc; 
+  background-color: #ffffff;
+  border: 1px solid #cccccc;
   color: #222222;
 }
 
-/* 4. Дополнительный класс для выделения имени участника (Классовый селектор) */
+/* 4. Дополнительный класс для выделения имени участника (классовый селектор) */
 .result-name {
   font-weight: bold;
   color: #0d47a1;

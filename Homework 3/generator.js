@@ -1,5 +1,4 @@
 import { readFile, unlink, writeFile } from 'node:fs/promises'
-
 import { calculateReport, validateQuizData } from './stats.js'
 
 const outputPath = './report.html'
@@ -101,11 +100,11 @@ function createReportHtml(report) {
 }
 
 function printSummary(report) {
-  console.log(`Участников: ${report.participantCount}`);
-  console.log(`Средний результат: ${report.averagePercentage}%`);
-  console.log(`Лучший результат: ${report.best.name} — ${report.best.score} из ${report.questionCount} (${report.best.percentage}%)`);
-  console.log(`Порог пройден: ${report.passedCount} из ${report.participantCount}`);
-  console.log(`Отчёт: report.html`);
+  console.log(`Участников: ${report.participantCount}`)
+  console.log(`Средний результат: ${report.averagePercentage}%`)
+  console.log(`Лучший результат: ${report.best.name} — ${report.best.score} из ${report.questionCount} (${report.best.percentage}%)`)
+  console.log(`Порог пройден: ${report.passedCount} из ${report.participantCount}`)
+  console.log(`Отчёт: report.html`)
 }
 
 async function removePreviousReport() {
@@ -124,42 +123,42 @@ function fail(message) {
 }
 
 async function main() {
-  const inputPath = process.argv[2];
-  
-  await removePreviousReport();
+  const inputPath = process.argv[2]
 
-  let fileContent;
+  await removePreviousReport()
+
+  let fileContent
   try {
-    fileContent = await readFile(inputPath, 'utf8');
+    fileContent = await readFile(inputPath, 'utf8')
   } catch (error) {
-    fail(`Ошибка чтения файла: ${error.code}`);
-    return;
+    fail(`Ошибка чтения файла: ${error.code}`)
+    return
   }
 
-  let data;
+  let data
   try {
-    data = JSON.parse(fileContent);
+    data = JSON.parse(fileContent)
   } catch (error) {
-    fail('Ошибка данных');
-    return;
+    fail('Ошибка данных')
+    return
   }
 
   if (!validateQuizData(data)) {
-    fail('Ошибка структуры данных');
-    return;
+    fail('Ошибка структуры данных')
+    return
   }
 
-  const report = calculateReport(data);
-  const html = createReportHtml(report);
+  const report = calculateReport(data)
+  const html = createReportHtml(report)
 
   try {
-    await writeFile(outputPath, html, 'utf8');
+    await writeFile(outputPath, html, 'utf8')
   } catch (error) {
-    fail(`Ошибка записи файла: ${error.code}`);
-    return;
+    fail(`Ошибка записи файла: ${error.code}`)
+    return
   }
 
-  printSummary(report);
+  printSummary(report)
 }
 
 main()
