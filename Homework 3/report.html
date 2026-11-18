@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Основы JavaScript — прототип отчёта</title>
+  <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+  <main class="report">
+    <h1>Основы JavaScript</h1>
+
+    <section class="summary" aria-labelledby="summary-title">
+      <h2 id="summary-title">Сводка</h2>
+      <div class="summary-grid">
+        <p class="summary-card">Участников<br><strong>7</strong></p>
+        <p class="summary-card">Средний результат<br><strong>60%</strong></p>
+        <p class="summary-card">Лучший результат<br><strong>Анна — 6 из 6 (100%)</strong></p>
+        <p class="summary-card">Порог пройден<br><strong>4 из 7</strong></p>
+      </div>
+    </section>
+
+    <section class="results" aria-labelledby="results-title">
+      <h2 id="results-title">Результаты участников</h2>
+      <form id="filter-form">
+        <label for="filter">Показать</label>
+        <select id="filter" name="filter">
+          <option value="all">Все</option>
+          <option value="passed">Порог пройден</option>
+          <option value="failed">Порог не пройден</option>
+        </select>
+        <button type="submit">Применить</button>
+      </form>
+      <p id="result-count">Показано: 7 из 7</p>
+      <ul id="result-list" class="result-list">
+        <li class="result-item"><span class="result-name">Анна</span> — 6 из 6 (100%)</li>
+        <li class="result-item"><span class="result-name">Борис</span> — 5 из 6 (83%)</li>
+        <li class="result-item"><span class="result-name">Вера</span> — 4 из 6 (67%)</li>
+        <li class="result-item"><span class="result-name">Глеб</span> — 3 из 6 (50%)</li>
+        <li class="result-item"><span class="result-name">Даша</span> — 1 из 6 (17%)</li>
+        <li class="result-item"><span class="result-name">Егор</span> — 0 из 6 (0%)</li>
+        <li class="result-item"><span class="result-name">Жанна</span> — 6 из 6 (100%)</li>
+      </ul>
+    </section>
+  </main>
+
+  <script>window.reportData = {"questionCount":6,"attempts":[{"name":"Анна","score":6,"percentage":100,"passed":true,"questionCount":6},{"name":"Борис","score":5,"percentage":83,"passed":true,"questionCount":6},{"name":"Вера","score":4,"percentage":67,"passed":true,"questionCount":6},{"name":"Глеб","score":3,"percentage":50,"passed":false,"questionCount":6},{"name":"Даша","score":1,"percentage":17,"passed":false,"questionCount":6},{"name":"Егор","score":0,"percentage":0,"passed":false,"questionCount":6},{"name":"Жанна","score":6,"percentage":100,"passed":true,"questionCount":6}]}</script>
+  <script src="./app.js"></script>
+</body>
+</html>

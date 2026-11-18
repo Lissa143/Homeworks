@@ -1,0 +1,8 @@
+{
+  "name": "homework-3-quiz-report",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "start": "node generator.js"
+  }
+}
